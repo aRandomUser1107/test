@@ -7,14 +7,15 @@
   </head>
   <body>
     <h1>Daftar Blog</h1>
-    <a href="/blog/create/">Buat Post Baru</a>
+    <a href="/todo/create/">Buat Post Baru</a>
     <hr />
 
     {% if posts %}
     <ul>
       {% for post in posts %}
       <li>
-        <a href="/blog/read/{{ post.id }}/">{{ post.title }}</a> - {{post.content }}
+        <a href="/todo/read/{{ post.id }}/">{{ post.title }}</a> -
+        {{post.content }}
         <a href="{% url 'update' post.id %}">=> Edit </a>
         <a
           href="{% url 'delete' post.id %}"
